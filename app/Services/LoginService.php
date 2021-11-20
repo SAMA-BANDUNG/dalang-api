@@ -21,9 +21,9 @@ class LoginService
                     $user_result->save();
 
                     $user_types = [
-                        0 => 'Super Admin',
-                        1 => 'User', 
-                        2 => 'Vendor', 
+                        1 => 'Super Admin',
+                        2 => 'User', 
+                        3 => 'Vendor', 
                     ];
 
                     $response = [

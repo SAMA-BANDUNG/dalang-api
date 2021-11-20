@@ -10,6 +10,18 @@ if (!function_exists('storeFileToPublic')) {
     }
 }
 
+if (!function_exists('pushMail')) {
+    function pushMail($to_name, $to_email, $body)
+    {
+        $data = array('name'=>$to_name, 'body' => $body);
+        Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
+        $message->to($to_email, $to_name)
+                ->subject('Email Dalang Account Verification');
+        $message->from('SENDER_EMAIL_ADDRESS','Dalang');
+        });
+    }
+}
+
 if (!function_exists('pushNotifFcm')) {
     function pushNotifFcm($target, $title, $message)
     {

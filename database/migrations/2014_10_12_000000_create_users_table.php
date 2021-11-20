@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('fcm_token')->nullable();
-            $table->tinyInteger('user_type')->comment('0:Super Admin, 1:User, 2:Vendor')->default(1);
+            $table->tinyInteger('user_type')->comment('1:Super Admin, 2:User, 3:Vendor')->default(2);
             $table->timestamps();
             $table->softDeletes();
         });

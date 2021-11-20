@@ -73,4 +73,10 @@ class AuthController extends Controller
 
         return $result;
     }
+
+    public function verif(RegisterService $registerService, $id){
+        $result = $registerService->verifAccount($id);
+
+        return $result;
+    }
 }
