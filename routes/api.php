@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => '/v1'], function() {
+    Route::post('/register', 'Auth\AuthController@store');
+    Route::post('/login', 'Auth\AuthController@login');
+
+    Route::group(['middleware' => ['auth:sanctum', 'role:Super Admin|User|Vendor']], function(){
+        Route::get('/logout', 'Auth\AuthController@logout');
+        Route::post('/register/vendor', 'VendorController@register');
+    });
 });
