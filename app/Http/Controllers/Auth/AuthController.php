@@ -27,7 +27,7 @@ class AuthController extends Controller
             return response()->json([
                 'status' => 'failed validation',
                 'message' => $validator->errors(),
-            ], 401);
+            ], 400);
         }
 
         $result = $registerService->register($request->all());
