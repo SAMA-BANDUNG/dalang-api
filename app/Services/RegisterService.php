@@ -50,7 +50,7 @@ class RegisterService
 
         } catch(Exception $e){
             return response()->json([
-                'message' => $e
+                'message' => $e->getMessage()
             ], 409);
         }
 
@@ -109,7 +109,7 @@ class RegisterService
 
         } catch (Exception $e) {
             return response()->json([
-                'message' => $e
+                'message' => $e->getMessage()
             ], 409);
         }
     }
@@ -133,7 +133,7 @@ class RegisterService
             
         } catch (Exception $e) {
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }

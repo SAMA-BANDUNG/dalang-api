@@ -55,7 +55,7 @@ class TransactionService
             }
         } catch (Exception $e){
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }
@@ -80,7 +80,7 @@ class TransactionService
             
         } catch(Exception $e) {
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }
@@ -104,7 +104,7 @@ class TransactionService
             
         } catch(Exception $e) {
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }
@@ -128,7 +128,7 @@ class TransactionService
             
         } catch(Exception $e) {
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }
@@ -143,7 +143,7 @@ class TransactionService
                                             ->get();
             if(isset($result_transaction)){
                 return response()->json([
-                    'message'    => 'success',
+                    'message'   => 'success',
                     'data'      => $result_transaction
                 ], 200);
             } else {
@@ -153,7 +153,7 @@ class TransactionService
             }
         } catch (Exception $e){
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     } 
@@ -174,8 +174,12 @@ class TransactionService
             }
         } catch (Exception $e){
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
-    } 
+    }
+    
+    public function userHero() {
+        
+    }
 }
