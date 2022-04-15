@@ -18,7 +18,7 @@ class CategoryService
                 return response()->json([
                     'message'    => 'success',
                     'data'      => $result_category
-                ], 200);
+                ], 201);
             } else {
                 return response()->json([
                     'message'    => 'failed'
@@ -26,7 +26,7 @@ class CategoryService
             }
         } catch (Exception $e){
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }
@@ -47,7 +47,7 @@ class CategoryService
             }
         } catch (Exception $e){
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }

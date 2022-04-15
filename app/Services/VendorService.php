@@ -25,7 +25,7 @@ class VendorService
         
         } catch (Exception $e) {
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }
@@ -47,7 +47,7 @@ class VendorService
         
         } catch (Exception $e) {
             return response()->json([
-                'message'    => $e
+                'message'    => $e->getMessage()
             ], 400);
         }
     }

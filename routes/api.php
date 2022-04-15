@@ -46,5 +46,9 @@ Route::group(['prefix' => '/v1'], function() {
         Route::get('/logout', 'Auth\AuthController@logout');
 
         Route::get('/transaction/cancel/{id}', 'TransactionController@cancel');
+
+        Route::post('/product', 'ProductController@store');
+        Route::get('/product', 'ProductController@index');
+        Route::get('/product/user', 'ProductController@myProduct');
     });
 });
